@@ -11,8 +11,6 @@ var problem = "split this string into words and print them on separate lines"
 
 // Your code
 
-var problem = "split this string into words and print them on separate lines"
-
 for word in problem.components(separatedBy: " ") {
     print(word)
 }
@@ -95,10 +93,9 @@ var arr = sampleInput.components(separatedBy: " ")
 var count = 0
 
 for word in arr() {
-if String(word) == String(word.reversed()){
-count += 1
-}
-
+    if String(word) == String(word.reversed()){
+        count += 1
+    }
 }
 
 print(count)
@@ -127,7 +124,6 @@ Sample Output: `true`
 
 var input = "PPALLP"
 var aCount = 0
-var lCount = 0
 
 for char in input {
     if char == "A" {
@@ -135,16 +131,12 @@ for char in input {
     }
 }
 
-if input.contains("LLL") {
-    lCount += 1
-}
-
-
-if aCount > 1 || lCount > 0{
+if aCount > 1 || input.contains("LLL"){
     print(false)
 } else {
     print(true)
 }
+
 
 
 ```
@@ -164,3 +156,25 @@ Sample Output1: `False`
 Sample Input2: `("aa", "aab")`
 
 Sample Output2: `True`
+
+``` swift
+var input = ("aja", "aabjjj")`
+
+var sortedA = String(input.a.sorted())
+
+var filterMag = ""
+
+for char in input.b {
+    if input.a.contains(char){
+        filterMag.insert(char, at: filterMag.endIndex)
+    }
+}
+
+var sortedFilterMag = filterMag.sorted()
+
+let result = String(sortedFilterMag).contains(sortedA)
+
+print(result)
+
+```
+This does not work on everything. Example : var input = (a:"qaja", b: "bajkhfaqjjj")
