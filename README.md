@@ -10,6 +10,12 @@ You are given a string stored in variable `problem`. Write code so that you prin
 var problem = "split this string into words and print them on separate lines"
 
 // Your code
+
+var problem = "split this string into words and print them on separate lines"
+
+for word in problem.components(separatedBy: " ") {
+    print(word)
+}
 ```
 
 Example
@@ -40,6 +46,11 @@ Given a string `testString` create a new variable called `condensedString` that 
 ```swift
 let testString = "  How   about      thesespaces  ?  "
 //condensedString = " How about thesespaces ? "
+
+var condensedString = testString.replacingOccurrences(of: "[ ]+", with: " ", options: .regularExpression)
+
+print(condensedString)
+
 ```
 
 
@@ -53,6 +64,18 @@ Sample Input: `"Swift is the best language"`
 
 Sample Output: `"language best the is Swift"`
 
+``` swift
+var sampleInput = "Swift is the best language"
+
+var arr = sampleInput.components(separatedBy: " ")
+
+for word in arr.reversed() {
+    print(word, terminator: " ")
+}
+
+
+```
+
 
 ## Question 4
 
@@ -63,6 +86,24 @@ Example:
 Sample Input: `"danaerys dad cat civic bottle"`
 
 Sample Output: `2`
+
+``` swift
+
+var sampleInput = "danaerys dad cat civic bottle"
+
+var arr = sampleInput.components(separatedBy: " ")
+var count = 0
+
+for word in arr() {
+if String(word) == String(word.reversed()){
+count += 1
+}
+
+}
+
+print(count)
+
+```
 
 
 ## Question 5
@@ -82,7 +123,31 @@ Example:
 Sample Input: `"PPALLP"`
 
 Sample Output: `true`
+``` swift
 
+var input = "PPALLP"
+var aCount = 0
+var lCount = 0
+
+for char in input {
+    if char == "A" {
+        aCount += 1
+    }
+}
+
+if input.contains("LLL") {
+    lCount += 1
+}
+
+
+if aCount > 1 || lCount > 0{
+    print(false)
+} else {
+    print(true)
+}
+
+
+```
 
 ## Question 6
 
